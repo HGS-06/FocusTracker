@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+
+  --color-surface: #10141a;
+  --color-surface-dim: #10141a;
+  --color-surface-bright: #353940;
+  --color-surface-container-lowest: #0a0e14;
+  --color-surface-container-low: #181c22;
+  --color-surface-container: #1c2026;
+  --color-surface-container-high: #262a31;
+  --color-surface-container-highest: #31353c;
+  
+  --color-on-surface: #dfe2eb;
+  --color-on-surface-variant: #bcc8d1;
+  
+  --color-primary: #92d9ff;
+  --color-primary-container: #00c2ff;
+  --color-on-primary-container: #004c66;
+  
+  --color-secondary: #4de082;
+  --color-secondary-container: #00b55d;
+  
+  --color-outline: #86929a;
+  --color-outline-variant: #3d484f;
+}
+
+@layer base {
+  body {
+    @apply bg-surface text-on-surface antialiased selection:bg-primary/20;
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-surface-container/70 backdrop-blur-xl border border-white/10;
+  }
+  
+  .timer-glow {
+    box-shadow: 0 0 80px -20px rgba(0, 194, 255, 0.15);
+  }
+
+  .bg-mesh {
+    background-color: #10141a;
+    background-image: 
+      radial-gradient(at 0% 0%, rgba(0, 194, 255, 0.05) 0px, transparent 50%),
+      radial-gradient(at 100% 100%, rgba(0, 194, 255, 0.03) 0px, transparent 50%);
+  }
+}
